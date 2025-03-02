@@ -5,6 +5,7 @@ type TypographyProps = {
   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body" | "small" | "strong" | "italic" | "blockquote" | "lead";
   weight?: "regular" | "bold" | "extrabold" | "semibold";
   className?: string;
+  noMargin?: boolean;
   children: React.ReactNode;
 };
 
@@ -23,11 +24,11 @@ const tagMap: Record<TypographyProps["variant"], keyof JSX.IntrinsicElements> = 
   lead: "p",
 };
 
-const Typography: React.FC<TypographyProps> = ({ variant = "body", weight = "regular", className, children }) => {
+const Typography: React.FC<TypographyProps> = ({ variant = "body", weight = "regular", noMargin = false, className, children }) => {
   const Tag = tagMap[variant] || "p";
 
   return (
-    <Tag className={`${styles[variant]} ${styles[weight]} ${className || ""}`.trim()}>
+    <Tag className={`${styles[variant]} ${styles[weight]} ${className || ""} ${noMargin ? styles.noMargin : ''}`.trim()}>
       {children}
     </Tag>
   );

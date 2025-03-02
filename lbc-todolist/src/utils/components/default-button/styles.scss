@@ -2,31 +2,31 @@
 
 .btn-default {
   background-color: map-get($palette, "primary", "main");
-  border-color: map-get($palette, "primary", "main");
   color: map-get($palette, "default", "white");
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: bold;
   border: none;
 
   &:hover {
     background-color: map-get($palette, "primary", "dark");
-    border-color: map-get($palette, "primary", "dark");
   }
 }
 
 .btn-delete {
-  background-color: map-get($palette, "status", "danger");
-  border-color: map-get($palette, "status", "danger");
-  color: map-get($palette, "default", "light");
+  background-color: map-get($palette, "red", "100");
 
   &:hover {
-    background-color: darken(map-get($palette, "status", "danger"), 10%);
-    border-color: darken(map-get($palette, "status", "danger"), 10%);
+    background-color: darken(map-get($palette, "red", "100"), 10%);
   }
 }
 
-.btn-label {
+.label-default {
     margin: 0px;
     color: map-get($palette, "default", "white") !important;
+}
+
+.label-delete {
+    margin: 0px;
+    color: map-get($palette, "red", "700") !important;
 }

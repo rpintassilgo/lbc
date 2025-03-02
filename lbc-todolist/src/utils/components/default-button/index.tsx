@@ -15,7 +15,7 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({ label, variant = "default
       className={`btn-default ${variant === "delete" ? "btn-delete" : ""}`}
       onClick={onClick}
     >
-        <Typography variant="h6" className="btn-label">
+        <Typography variant="h6" className={`${variant === "delete" ? "label-delete" : "label-default"}`}>
             {label}
         </Typography>
     </Button>
