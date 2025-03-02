@@ -1,17 +1,41 @@
 @import "../../utils/theme/palette";
 
-.todo {
+.todo-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    margin: 48px 0px;
+    align-self: center;
+    max-height: calc(100vh - 48px - 48px); // Adjusts for header & footer
+    width: 1110px;
+    max-width: 100%;
+    background-color: map-get($palette, "gray", "100");
+    border-radius: 8px;
+    box-shadow: 0px -5px 0px #67C0C2;
+    padding: 32px;
+    overflow: hidden; // Prevents full page scrolling
+}
 
-    .todo-container {
-        background-color: map-get($palette, "gray", "100");
-        border-color: map-get($palette, "gray", "400");
-        border-radius: 8px;
-        box-shadow: 0px -5px 0px #67C0C2;
-        display: flex;
-        flex-direction: column;
-        width: 1046px;
-        padding: 32px;
-    }
+/* Allow table rows to scroll */
+.todo-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0; // Prevents it from growing indefinitely
+}
+
+/* Pagination should always stay at bottom */
+.pagination-container {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    background-color: map-get($palette, "gray", "100");
+}
+
+.pagination-footer {
+    height: 38px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 16px;
 }

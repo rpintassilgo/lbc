@@ -1,23 +1,26 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import "./styles.scss"
+import "./styles.scss";
 import Typography from "../typography";
 
 interface DefaultButtonProps {
   label: string;
   variant?: "default" | "delete";
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-const DefaultButton: React.FC<DefaultButtonProps> = ({ label, variant = "default", onClick }) => {
+const DefaultButton: React.FC<DefaultButtonProps> = ({ label, variant = "default", onClick, disabled }) => {
   return (
     <Button
-      className={`btn-default ${variant === "delete" ? "btn-delete" : ""}`}
+      variant={variant === "delete" ? "danger" : "primary"} // ✅ Direct Bootstrap variant
+      className="btn" // ✅ Use the base button class
       onClick={onClick}
+      disabled={disabled}
     >
-        <Typography variant="h6" className={`${variant === "delete" ? "label-delete" : "label-default"}`}>
-            {label}
-        </Typography>
+      <Typography variant="h6" className="btn-label" weight={disabled ? 'regular' : undefined} noMargin>
+        {label}
+      </Typography>
     </Button>
   );
 };

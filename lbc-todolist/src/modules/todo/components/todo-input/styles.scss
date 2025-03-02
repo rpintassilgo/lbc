@@ -1,7 +1,29 @@
 @import "../../../../utils/theme/palette";
 
+.pagination-page-label {
+    align-self: center;
+    margin-right: 12px;
+}
+
+.todo-input {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        margin-bottom: 6px;
+    }
+}
+
+.todo-input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 38px;
+}
+
 .input {
     width: 403px;
+    height: 38px;
     border-radius: 6px;
     border: 1px solid map-get($palette, "gray", "300");
     padding: 9px 16px;

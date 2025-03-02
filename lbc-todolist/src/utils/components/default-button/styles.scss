@@ -1,32 +1,45 @@
 @import "../../theme/palette";
 
-.btn-default {
-  background-color: map-get($palette, "primary", "main");
-  color: map-get($palette, "default", "white");
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
-
-  &:hover {
-    background-color: map-get($palette, "primary", "dark");
-  }
+.btn {
+    height: 38px !important; // Ensure all buttons have consistent height
+    border: none !important; 
+    outline: none !important; 
+    box-shadow: none !important;
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 
-.btn-delete {
-  background-color: map-get($palette, "red", "100");
-
-  &:hover {
-    background-color: darken(map-get($palette, "red", "100"), 10%);
-  }
-}
-
-.label-default {
-    margin: 0px;
+// ✅ Primary Button (Default)
+.btn-primary {
+    background-color: map-get($palette, "primary", "main") !important;
     color: map-get($palette, "default", "white") !important;
+
+    &:hover {
+        background-color: map-get($palette, "primary", "dark") !important;
+    }
 }
 
-.label-delete {
-    margin: 0px;
+// ✅ Danger (Delete) Button
+.btn-danger {
+    background-color: map-get($palette, "red", "100") !important;
     color: map-get($palette, "red", "700") !important;
+
+    &:hover {
+        background-color: darken(map-get($palette, "red", "100"), 10%) !important;
+    }
+}
+
+// ✅ Disabled Button Styling
+.btn:disabled,
+.btn.disabled {
+    background-color: map-get($palette, "gray", "300") !important;
+    color: map-get($palette, "gray", "500") !important;
+    border: 1px solid map-get($palette, "gray", "400") !important;
+    cursor: not-allowed;
+}
+
+// ✅ Label inside button
+.btn-label {
+    margin: 0;
+    font-weight: bold;
 }

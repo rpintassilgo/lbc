@@ -3,6 +3,8 @@ import { toggleTodo, deleteTodo, Todo } from "../../../../utils/reducers/todo.re
 import DefaultButton from "../../../../utils/components/default-button";
 import { formatDate } from "../../../../utils/date";
 import Typography from "../../../../utils/components/typography";
+import { Badge } from "react-bootstrap";
+import "./styles.scss"
 
 const TodoItem = ({ todo }: { todo: Todo }) => {
   const dispatch = useDispatch();
@@ -10,13 +12,16 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   return (
     <tr>
       <td>
+        <div className="todo-task-col">
         <input
           type="checkbox"
           checked={todo.completed}
           onChange={() => dispatch(toggleTodo(todo.id))}
         />
+        <Typography variant="body" noMargin className={todo.completed ? "completed" : ""}>{todo.text}</Typography>
+        {todo.completed && <Badge pill bg="success">Concluída</Badge>}
+        </div>
       </td>
-      <td className={todo.completed ? "completed" : ""}><Typography variant="body" noMargin>{todo.text}</Typography></td>
       <td><Typography variant="body" noMargin>{formatDate(todo.createdAt)}</Typography></td>
       <td><Typography variant="body" noMargin>{todo.completed ? formatDate(new Date()) : "-"}</Typography></td>
       <td className="todo-actions">

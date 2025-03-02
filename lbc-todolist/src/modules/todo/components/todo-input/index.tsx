@@ -2,10 +2,23 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../../../utils/reducers/todo.redux";
 import DefaultButton from "../../../../utils/components/default-button";
-import "./styles.scss"
+import "./styles.scss";
 import Typography from "../../../../utils/components/typography";
+import PaginationControls from "../../../../utils/components/pagination-controls";
 
-const TodoInput = () => {
+const TodoInput = ({ 
+  currentPage, 
+  totalPages, 
+  onPageChange, 
+  tasksPerPage, 
+  setTasksPerPage 
+}: { 
+  currentPage: number; 
+  totalPages: number; 
+  onPageChange: (page: number) => void; 
+  tasksPerPage: number; 
+  setTasksPerPage: (tasks: number) => void; 
+}) => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
@@ -17,16 +30,28 @@ const TodoInput = () => {
   };
 
   return (
-    <div className="d-flex gap-2">
-        <Typography variant="body">
+    <div className="todo-input"> 
+        <Typography variant="body" className="title">
             Descrição da tarefa:
         </Typography>
-      <input
-        className="input"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <DefaultButton label="Adicionar Tarefa" onClick={handleAddTodo} />
+        <div className="todo-input-container">
+            <div className="todo-input-field">
+                <input
+                    className="input"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Digite sua tarefa..."
+                />
+                <DefaultButton label="Adicionar Tarefa" onClick={handleAddTodo} />
+            </div>
+            <PaginationControls 
+              currentPage={currentPage} 
+              totalPages={totalPages} 
+              onPageChange={onPageChange} 
+              tasksPerPage={tasksPerPage} 
+              setTasksPerPage={setTasksPerPage} 
+            />
+        </div>
     </div>
   );
 };
