@@ -6,8 +6,10 @@ import TodoList from "./components/todo-list";
 import Typography from "../../utils/components/typography";
 import "./styles.scss";
 import PaginationControls from "../../utils/components/pagination-controls";
+import { useTranslation } from "react-i18next";
 
 const Todo = () => {
+    const {t} = useTranslation()
   const todos = useSelector((state: ReducerState) => state.todoReducer.todos);
 
   // Pagination states
@@ -41,7 +43,7 @@ const Todo = () => {
       {/* HEADER */}
       <div className="todo-header">
         <Typography variant="h1" weight="bold" className="title">
-          As minhas tarefas
+          {t('myTasks')}
         </Typography>
         <TodoInput 
           currentPage={currentPage} 
@@ -60,7 +62,7 @@ const Todo = () => {
       {/* FOOTER WITH PAGINATION CONTROLS */}
       <div className="pagination-footer">
         <Typography variant="body" weight="semibold">
-            Total de tarefas: {todos.length}
+            {t('totalTasks', { total: todos.length})}
         </Typography>
         <PaginationControls 
           currentPage={currentPage}

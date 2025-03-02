@@ -3,6 +3,7 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 import DefaultButton from "../default-button";
 import Typography from "../typography";
 import "./styles.scss"
+import { useTranslation } from "react-i18next";
 
 interface PaginationControlsProps {
   currentPage: number;
@@ -19,15 +20,16 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({
   tasksPerPage,
   setTasksPerPage
 }) => {
+    const {t} = useTranslation()
   return (
     <div className="pagination-controls">
       <Typography variant="body">
-        Página {currentPage} de {totalPages}
+        {t('pageInfo', { currentPage, totalPages})}
       </Typography>
 
       <div className="pagination-buttons">
         <DefaultButton 
-          label="Anterior" 
+          label={t('previous')} 
           onClick={() => onPageChange(currentPage - 1)} 
           disabled={currentPage === 1} 
         />
@@ -37,7 +39,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({
         </Typography>
         
         <DefaultButton 
-          label="Seguinte" 
+          label={t('next')} 
           onClick={() => onPageChange(currentPage + 1)} 
           disabled={currentPage === totalPages} 
         />

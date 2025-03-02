@@ -5,9 +5,11 @@ import { formatDate } from "../../../../utils/date";
 import Typography from "../../../../utils/components/typography";
 import { Badge } from "react-bootstrap";
 import "./styles.scss"
+import { useTranslation } from "react-i18next";
 
 const TodoItem = ({ todo }: { todo: Todo }) => {
   const dispatch = useDispatch();
+  const {t} = useTranslation()
 
   return (
     <tr>
@@ -25,7 +27,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
       <td><Typography variant="body" noMargin>{formatDate(todo.createdAt)}</Typography></td>
       <td><Typography variant="body" noMargin>{todo.completed ? formatDate(new Date()) : "-"}</Typography></td>
       <td className="todo-actions">
-        <DefaultButton label="Excluir" variant="delete" onClick={() => dispatch(deleteTodo(todo.id))} />
+        <DefaultButton label={t('delete')} variant="delete" onClick={() => dispatch(deleteTodo(todo.id))} />
       </td>
     </tr>
   );

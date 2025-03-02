@@ -1,0 +1,18 @@
+{
+    "task": "Task",
+    "myTasks": "My Tasks",
+    "taskDescription": "Task Description:",
+    "addTask": "Add Task",
+    "previous": "Previous",
+    "next": "Next",
+    "pageInfo": "Page {{currentPage}} of {{totalPages}}",
+    "tasksPerPage": "Tasks per page",
+    "totalTasks": "Total tasks: {{total}}",
+    "noTaskAdded": "No task added.",
+    "insertTask": "Insert task...",
+    "creationDate": "Creation Date",
+    "completionDate": "Completion date",
+    "delete": "Delete",
+    "exerciseDevelopedBy": "Exercise developed by: {{name}}"
+  }
+  
