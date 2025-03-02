@@ -1,0 +1,74 @@
+@import "../../theme/palette"; // Import colors
+
+// Font Families
+$font-primary: "Inter", sans-serif;
+$font-secondary: "Mulish", sans-serif;
+
+// Typography Styles
+.h1 {
+  font-size: 40px;
+  font-family: $font-primary;
+}
+
+.h2 {
+  font-size: 32px;
+  font-family: $font-primary;
+}
+
+.h3 {
+  font-size: 28px;
+  font-family: $font-primary;
+}
+
+.h4 {
+  font-size: 24px;
+  font-family: $font-primary;
+}
+
+.h5 {
+  font-size: 20px;
+  font-family: $font-primary;
+}
+
+.h6 {
+  font-size: 16px;
+  font-family: $font-primary;
+}
+
+.body {
+  font-size: 16px;
+  font-family: $font-primary;
+  line-height: 28px;
+}
+
+.small {
+  font-size: 12px;
+  font-family: $font-primary;
+}
+
+.blockquote {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.lead {
+  font-size: 21px;
+  font-weight: 400;
+}
+
+// Font Weights
+.regular {
+  font-weight: 400;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.extrabold {
+  font-weight: 800;
+}

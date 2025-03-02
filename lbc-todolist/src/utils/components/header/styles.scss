@@ -1,0 +1,21 @@
+@import "../../theme/palette";
+
+.header {
+    background-color: map-get($palette, "default", "light");;
+    padding: 48px 0px;
+    display: flex;
+    justify-content: center;
+    
+    .header-content {
+        width: 1110px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .logo {
+      height: 65px;
+      width: 347px;
+    }
+}
+  

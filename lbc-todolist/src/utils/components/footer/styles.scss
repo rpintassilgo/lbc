@@ -1,0 +1,26 @@
+@import "../../theme/palette";
+
+.footer {
+    background-color: map-get($palette, "default", "light");
+    border-top: 1px solid map-get($palette, "gray", "400");
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+
+    .footer-content {
+        width: 1110px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .logo {
+        height: 32px;
+        width: 169px;
+    }
+
+    .footer-text {
+        margin-left: 32px;
+        color: map-get($palette, "gray", "700");
+    }
+}

@@ -1,0 +1,38 @@
+@import "../../../../utils/theme/palette";
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid map-get($palette, "gray", "300");
+    text-align: left;
+  }
+
+  th {
+    background-color: map-get($palette, "gray", "200");
+    font-weight: 600;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: map-get($palette, "gray", "500");
+  }
+
+  .todo-actions {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.todo-empty {
+  margin-top: 20px;
+  text-align: center;
+  color: map-get($palette, "gray", "500");
+}

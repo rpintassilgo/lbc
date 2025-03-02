@@ -1,0 +1,19 @@
+@import "../../theme/palette";
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.outlet {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}

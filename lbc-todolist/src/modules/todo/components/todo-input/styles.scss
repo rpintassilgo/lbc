@@ -1,0 +1,16 @@
+@import "../../../../utils/theme/palette";
+
+.input {
+    width: 403px;
+    border-radius: 6px;
+    border: 1px solid map-get($palette, "gray", "300");
+    padding: 9px 16px;
+    margin-right: 8px;
+
+    // override default bootstrap input focus
+    &:focus {
+        border-color: map-get($palette, "gray", "500") !important;
+        box-shadow: none !important;
+        outline: none !important;
+      }
+}
