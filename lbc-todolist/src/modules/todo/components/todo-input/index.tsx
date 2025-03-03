@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { createNewTodo } from "../../../../utils/reducers/todo.redux";
-import DefaultButton from "../../../../utils/components/default-button";
+import { createNewTodo } from "../../../../reducers/todo.redux";
+import DefaultButton from "../../../../components/default-button";
 import "./styles.scss";
-import Typography from "../../../../utils/components/typography";
-import PaginationControls from "../../../../utils/components/pagination-controls";
+import Typography from "../../../../components/typography";
+import PaginationControls from "../../../../components/pagination-controls";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "../../../../utils/hooks";
 

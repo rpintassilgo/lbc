@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "firebase/firestore";
-import { Todo } from "./reducers/todo.redux";
+import { Todo } from "../reducers/todo.redux";
 
 // ---------- firebase config ------------
 

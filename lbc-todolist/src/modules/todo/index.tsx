@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { ReducerState } from "../../utils/reducers";
-import { fetchAllTodos } from "../../utils/reducers/todo.redux";
+import { ReducerState } from "../../reducers";
+import { fetchAllTodos } from "../../reducers/todo.redux";
 import TodoInput from "./components/todo-input";
 import TodoList from "./components/todo-list";
-import Typography from "../../utils/components/typography";
+import Typography from "../../components/typography";
 import "./styles.scss";
-import PaginationControls from "../../utils/components/pagination-controls";
+import PaginationControls from "../../components/pagination-controls";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 

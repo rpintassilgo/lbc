@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Dispatch } from "redux";
 import { ReducerThunk } from ".";
-import { getTodos, createTodo, toggleTodo, deleteTodo } from "../firebase";
+import { getTodos, createTodo, toggleTodo, deleteTodo } from "../utils/firebase";
 import showToast from "../components/custom-toast";
 
 export interface Todo {

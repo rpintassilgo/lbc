@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import Typography from "../../../../utils/components/typography";
-import { Todo } from "../../../../utils/reducers/todo.redux";
+import Typography from "../../../../components/typography";
+import { Todo } from "../../../../reducers/todo.redux";
 import TodoItem from "../todo-item";
 import "./styles.scss";
 

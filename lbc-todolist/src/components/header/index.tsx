@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import logo from "../../../assets/logotipo-LBC-transparente.png";
-import { changeLanguage } from "../../i18n";
+import { changeLanguage } from "../../utils/i18n";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
 const Header: React.FC = () => {

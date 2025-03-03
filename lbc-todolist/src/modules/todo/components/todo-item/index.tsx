@@ -1,7 +1,7 @@
-import { toggleTodoCompletion, deleteTodoById, Todo } from "../../../../utils/reducers/todo.redux";
-import DefaultButton from "../../../../utils/components/default-button";
+import { toggleTodoCompletion, deleteTodoById, Todo } from "../../../../reducers/todo.redux";
+import DefaultButton from "../../../../components/default-button";
 import { formatDate } from "../../../../utils/date";
-import Typography from "../../../../utils/components/typography";
+import Typography from "../../../../components/typography";
 import { Badge } from "react-bootstrap";
 import "./styles.scss";
 import { useTranslation } from "react-i18next";
