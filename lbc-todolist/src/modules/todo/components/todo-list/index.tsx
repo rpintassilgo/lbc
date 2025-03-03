@@ -25,7 +25,9 @@ const TodoList = ({ todos }: { todos: Todo[] }) => {
       </table>
     </div>
   ) : (
-    <p className="todo-empty">Nenhuma tarefa adicionada ainda.</p>
+    <div className="todo-empty-container">
+      <p className="todo-empty">{t('noTaskAdded')}</p>
+    </div>
   );
 };
 

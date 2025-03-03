@@ -14,6 +14,12 @@
     "completionDate": "Data de conclusão",
     "delete": "Excluir",
     "exerciseDevelopedBy": "Exercício desenvolvido por: {{name}}",
-    "completed": "Concluída"
+    "completed": "Concluída",
+    "taskAdded": "Tarefa adicionada",
+    "taskCompleted": "Tarefa concluída",
+    "taskDeleted": "Tarefa excluída",
+    "errorWhileFetchingTodoList": "Erro ao obter a lista todo",
+    "errorWhileCompletingTask": "Erro ao completar tarefa",
+    "errorWhileDeletingTask": "Erro ao excluír tarefa"
   }
   

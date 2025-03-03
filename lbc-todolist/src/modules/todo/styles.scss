@@ -20,6 +20,7 @@
     flex-grow: 1;
     overflow-y: auto;
     min-height: 0; // Prevents it from growing indefinitely
+    justify-content: center;
 }
 
 /* Pagination should always stay at bottom */

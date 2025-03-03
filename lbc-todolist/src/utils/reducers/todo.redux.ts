@@ -1,12 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Dispatch } from "redux";
 import { ReducerThunk } from ".";
-import { getTodos, createTodo, toggleTodo, deleteTodo } from "../firebase"; // Firestore functions
+import { getTodos, createTodo, toggleTodo, deleteTodo } from "../firebase";
+import showToast from "../components/custom-toast";
 
 export interface Todo {
-  id: string; // Firestore uses string IDs
+  id: string;
   text: string;
-  completedAt: Date | null; // If completed, store date; if not, keep null
+  completedAt: Date | null;
   createdAt: Date;
 }
 
@@ -54,43 +55,47 @@ const todoSlice = createSlice({
 export const { setTodos, addTodo, toggleTodoStatus, removeTodo, setLoading } = todoSlice.actions;
 export default todoSlice.reducer;
 
-// 🟢 Fetch todos from Firestore
+// ---------------------------------- Firebase functions ----------------------------------
 export const fetchAllTodos = (): ReducerThunk => async (dispatch: Dispatch) => {
   dispatch(setLoading(true));
   try {
     const todos = await getTodos();
     dispatch(setTodos(todos));
   } catch (error) {
-    console.error("Failed to load todos:", error);
+    console.error(error)
+    showToast("errorWhileFetchingTodoList")
   }
 };
 
-// 🟢 Add a new todo and save it to Firestore
 export const createNewTodo = (text: string): ReducerThunk => async (dispatch: Dispatch) => {
   try {
     const newTodo = await createTodo(text);
     dispatch(addTodo(newTodo));
+    showToast("taskAdded")
   } catch (error) {
-    console.error("Failed to save new todo:", error);
+    console.error(error)
+    showToast("errorWhileAddingTask")
   }
 };
 
-// 🟢 Toggle completion status and update Firestore
 export const toggleTodoCompletion = (id: string, completedAt: Date | null): ReducerThunk => async (dispatch: Dispatch) => {
   try {
     await toggleTodo(id, completedAt);
     dispatch(toggleTodoStatus({ id, completedAt }));
+    if (completedAt) showToast("taskCompleted")
   } catch (error) {
-    console.error("Failed to update todo status:", error);
+    console.error(error)
+    showToast("errorWhileCompletingTask")
   }
 };
 
-// 🟢 Remove a todo from Firestore
 export const deleteTodoById = (id: string): ReducerThunk => async (dispatch: Dispatch) => {
   try {
     await deleteTodo(id);
     dispatch(removeTodo(id));
+    showToast('taskDeleted')
   } catch (error) {
-    console.error("Failed to delete todo:", error);
+    console.error(error)
+    showToast("errorWhileDeletingTask")
   }
 };

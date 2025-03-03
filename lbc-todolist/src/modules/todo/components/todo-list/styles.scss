@@ -1,4 +1,5 @@
 @import "../../../../utils/theme/palette";
+
 .todo-list-container {
     margin-top: 16px;
     flex-grow: 1;
@@ -41,4 +42,14 @@
         align-items: center; // Centers the button within the cell
         justify-content: center;
     }
+}
+
+.todo-empty {
+    padding: 48px;
+    color: 1px solid map-get($palette, "gray", "700");
+}
+
+.todo-empty-container {
+    display: flex;
+    justify-content: center;
 }

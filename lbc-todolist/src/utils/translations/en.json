@@ -14,6 +14,12 @@
     "completionDate": "Completion date",
     "delete": "Delete",
     "exerciseDevelopedBy": "Exercise developed by: {{name}}",
-    "completed": "Completed"
+    "completed": "Completed",
+    "taskAdded": "Task added",
+    "taskCompleted": "Task completed",
+    "taskDeleted": "Task deleted",
+    "errorWhileFetchingTodoList": "Error while fetching todo list",
+    "errorWhileCompletingTask": "Error while completing task",
+    "errorWhileDeletingTask": "Error while deleting task"
   }
   

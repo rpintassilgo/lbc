@@ -1,0 +1,34 @@
+@import "../../theme/palette";
+
+.toast-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 443px; // Match Figma width
+  background-color: map-get($palette, "green", "500"); // Figma green
+  border-radius: 8px;
+  padding: 12px;
+  color: map-get($palette, "default", "white");
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  
+  .toast-message {
+    flex-grow: 1;
+    margin-right: 8px;
+  }
+
+  .toast-close-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
