@@ -1,23 +1,30 @@
-import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ReducerState } from "../../utils/reducers";
+import { fetchAllTodos } from "../../utils/reducers/todo.redux";
 import TodoInput from "./components/todo-input";
 import TodoList from "./components/todo-list";
 import Typography from "../../utils/components/typography";
 import "./styles.scss";
 import PaginationControls from "../../utils/components/pagination-controls";
 import { useTranslation } from "react-i18next";
+import { useAppDispatch, useAppSelector } from "../../utils/hooks";
 
 const Todo = () => {
-    const {t} = useTranslation()
-  const todos = useSelector((state: ReducerState) => state.todoReducer.todos);
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const todos = useAppSelector((state: ReducerState) => state.todo.todos);
+
+  // Load todos on mount
+  useEffect(() => {
+    dispatch(fetchAllTodos());
+  }, [dispatch]);
 
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
   const [tasksPerPage, setTasksPerPage] = useState(8);
 
   // Calculate total pages
-  const totalPages = Math.ceil(todos.length / tasksPerPage);
+  const totalPages = Math.max(1, Math.ceil(todos.length / tasksPerPage));
 
   // Paginate Todos
   const indexOfLastTodo = currentPage * tasksPerPage;
@@ -62,7 +69,7 @@ const Todo = () => {
       {/* FOOTER WITH PAGINATION CONTROLS */}
       <div className="pagination-footer">
         <Typography variant="body" weight="semibold">
-            {t('totalTasks', { total: todos.length})}
+          {t('totalTasks', { total: todos.length })}
         </Typography>
         <PaginationControls 
           currentPage={currentPage}

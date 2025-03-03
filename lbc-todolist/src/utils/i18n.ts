@@ -4,7 +4,7 @@ import en from "./translations/en.json";
 import pt from "./translations/pt.json";
 
 // Get the saved language from localStorage OR default to "en"
-const savedLanguage = localStorage.getItem("language") || "en";
+export const savedLanguage = localStorage.getItem("language") || "en";
 
 i18n
   .use(initReactI18next)

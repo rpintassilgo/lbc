@@ -13,6 +13,7 @@
     "creationDate": "Creation Date",
     "completionDate": "Completion date",
     "delete": "Delete",
-    "exerciseDevelopedBy": "Exercise developed by: {{name}}"
+    "exerciseDevelopedBy": "Exercise developed by: {{name}}",
+    "completed": "Completed"
   }
   
