@@ -12,7 +12,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
   const { t } = useTranslation();
 
   const handleToggle = () => {
-    const completedAt = todo.completedAt ? null : new Date(); // Set timestamp if completing
+    const completedAt = todo.completedAt ? null : new Date();
     dispatch(toggleTodoCompletion(todo.id, completedAt));
   };
 

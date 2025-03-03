@@ -25,8 +25,8 @@
     background-color: map-get($palette, "primary", "main");
     color: map-get($palette, "default", "white");
     border-radius: 6px;
-    display: flex; // Enables flexbox
-    align-items: center; // Centers content vertically
-    justify-content: center; // Centers content horizontally
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   

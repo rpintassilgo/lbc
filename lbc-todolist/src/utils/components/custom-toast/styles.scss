@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 443px; // Match Figma width
-  background-color: map-get($palette, "green", "500"); // Figma green
+  width: 443px;
+  background-color: map-get($palette, "green", "500");
   border-radius: 8px;
   padding: 12px;
   color: map-get($palette, "default", "white");

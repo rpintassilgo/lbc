@@ -5,20 +5,20 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden; // Prevents the entire table from scrolling
+    overflow: hidden;
 }
 
 .todo-table {
     width: 100%;
-    border-collapse: collapse; // Ensures there is no space between borders
-    border-spacing: 0; // Ensures no default spacing
+    border-collapse: collapse;
+    border-spacing: 0;
 
     thead {
         border-top: 1px solid map-get($palette, "gray", "300");
         border-bottom: 2px solid map-get($palette, "gray", "300");
 
         th {
-            padding: 16px 0; // Adds spacing inside cells
+            padding: 16px 0;
             text-align: left;
         }
     }
@@ -28,7 +28,7 @@
     }
 
     tbody td {
-        padding: 6px 8px; // 6px top/bottom, 8px left/right for better readability
+        padding: 6px 8px;
     }
 
     .todo-actions {
@@ -39,7 +39,7 @@
     .todo-delete-button {
         padding: 4px 8px;
         display: flex;
-        align-items: center; // Centers the button within the cell
+        align-items: center;
         justify-content: center;
     }
 }

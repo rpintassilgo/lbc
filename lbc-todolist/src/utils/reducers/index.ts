@@ -3,12 +3,12 @@ import todoReducer from "./todo.redux";
 
 const store = configureStore({
   reducer: {
-    todo: todoReducer, // Ensure reducer name matches in components
+    todo: todoReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 });
 
-// Explicitly type RootState & AppDispatch
+// explicitly type state and dispatch
 export type ReducerState = ReturnType<typeof store.getState>;
 export type ReducerDispatch = ThunkDispatch<ReducerState, void, any>;
 export type ReducerThunk<R = void> = ThunkAction<R, ReducerState, unknown, any>;

@@ -3,7 +3,6 @@ import { initReactI18next } from "react-i18next";
 import en from "./translations/en.json";
 import pt from "./translations/pt.json";
 
-// Get the saved language from localStorage OR default to "en"
 export const savedLanguage = localStorage.getItem("language") || "en";
 
 i18n
@@ -13,17 +12,16 @@ i18n
       en: { translation: en },
       pt: { translation: pt }
     },
-    lng: savedLanguage, // Load saved language from localStorage
+    lng: savedLanguage,
     fallbackLng: "en",
     interpolation: {
       escapeValue: false
     }
   });
 
-// Function to change language and persist it in localStorage
 export const changeLanguage = (lng: string) => {
   i18n.changeLanguage(lng);
-  localStorage.setItem("language", lng); // Only store "en" or "pt"
+  localStorage.setItem("language", lng);
 };
 
 export default i18n;

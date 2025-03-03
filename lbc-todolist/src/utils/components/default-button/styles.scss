@@ -1,7 +1,7 @@
 @import "../../theme/palette";
 
 .btn {
-    height: 38px !important; // Ensure all buttons have consistent height
+    height: 38px !important;
     border: none !important; 
     outline: none !important; 
     box-shadow: none !important;
@@ -9,7 +9,6 @@
     border-radius: 6px;
 }
 
-// ✅ Primary Button (Default)
 .btn-primary {
     background-color: map-get($palette, "primary", "main") !important;
     color: map-get($palette, "default", "white") !important;
@@ -19,7 +18,6 @@
     }
 }
 
-// ✅ Danger (Delete) Button
 .btn-danger {
     background-color: map-get($palette, "red", "100") !important;
     color: map-get($palette, "red", "700") !important;
@@ -29,7 +27,6 @@
     }
 }
 
-// ✅ Disabled Button Styling
 .btn:disabled,
 .btn.disabled {
     background-color: map-get($palette, "gray", "300") !important;
@@ -38,7 +35,6 @@
     cursor: not-allowed;
 }
 
-// ✅ Label inside button
 .btn-label {
     margin: 0;
     font-weight: bold;

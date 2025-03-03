@@ -13,8 +13,8 @@ interface DefaultButtonProps {
 const DefaultButton: React.FC<DefaultButtonProps> = ({ label, variant = "default", onClick, disabled }) => {
   return (
     <Button
-      variant={variant === "delete" ? "danger" : "primary"} // ✅ Direct Bootstrap variant
-      className="btn" // ✅ Use the base button class
+      variant={variant === "delete" ? "danger" : "primary"}
+      className="btn"
       onClick={onClick}
       disabled={disabled}
     >
