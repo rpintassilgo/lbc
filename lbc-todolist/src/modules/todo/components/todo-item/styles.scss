@@ -4,3 +4,21 @@
     display: flex;
     gap: 8px;
 }
+
+.todo-task-col input[type="checkbox"] {
+    accent-color: map-get($palette, "primary", "main");
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.badge-completed {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.todo-item-text {
+    color: map-get($palette, "gray", "700");
+}

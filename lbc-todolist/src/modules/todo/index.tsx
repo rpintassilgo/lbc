@@ -68,7 +68,7 @@ const Todo = () => {
 
       {/* FOOTER WITH PAGINATION CONTROLS */}
       <div className="pagination-footer">
-        <Typography variant="body" weight="semibold" className="total-tasks">
+        <Typography variant="body" weight="regular" className="total-tasks">
           {t('totalTasks', { total: todos.length })}
         </Typography>
         <PaginationControls 

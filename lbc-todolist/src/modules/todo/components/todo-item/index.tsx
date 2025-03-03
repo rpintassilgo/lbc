@@ -22,13 +22,13 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
         <div className="todo-task-col">
           <input
             type="checkbox"
-            checked={!!todo.completedAt} // If completedAt exists, it's checked
+            checked={!!todo.completedAt}
             onChange={handleToggle}
           />
-          <Typography variant="body" noMargin className={todo.completedAt ? "completed" : ""}>
+          <Typography variant="body" noMargin className={`${todo.completedAt ? "completed" : ""} todo-item-text`}>
             {todo.text}
           </Typography>
-          {todo.completedAt && <Badge pill bg="success">{t("completed")}</Badge>}
+          {todo.completedAt && <Badge className="badge-completed" pill bg="success">{t("completed")}</Badge>}
         </div>
       </td>
       <td>

@@ -41,6 +41,8 @@
 }
 
 .total-tasks {
+    font-size: 20px;
+    color: map-get($palette, "gray", "700");
     margin: 0px !important;
     display: flex;
     justify-content: center;
