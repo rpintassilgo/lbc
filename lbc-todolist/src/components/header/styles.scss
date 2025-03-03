@@ -1,4 +1,4 @@
-@import "../../theme/palette";
+@import "../../utils/theme/palette";
 
 .header {
     background-color: map-get($palette, "default", "light");;
