@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
-import { ReducerState } from "../../reducers";
-import { fetchAllTodos } from "../../reducers/todo.redux";
-import TodoInput from "./components/todo-input";
-import TodoList from "./components/todo-list";
-import Typography from "../../components/typography";
-import "./styles.scss";
-import PaginationControls from "../../components/pagination-controls";
-import { useTranslation } from "react-i18next";
-import { useAppDispatch, useAppSelector } from "../../utils/hooks";
+import { useState, useEffect } from 'react';
+import { ReducerState } from '../../reducers';
+import { fetchAllTodos } from '../../reducers/todo.redux';
+import TodoInput from './components/todo-input';
+import TodoList from './components/todo-list';
+import Typography from '../../components/typography';
+import './styles.scss';
+import PaginationControls from '../../components/pagination-controls';
+import { useTranslation } from 'react-i18next';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
 
 const Todo = () => {
   const { t } = useTranslation();
@@ -40,30 +40,29 @@ const Todo = () => {
   };
 
   return (
-    <div className="todo-container">
-      
-      <div className="todo-header">
-        <Typography variant="h1" weight="bold" className="title">
+    <div className='todo-container'>
+      <div className='todo-header'>
+        <Typography variant='h1' weight='bold' className='title'>
           {t('myTasks')}
         </Typography>
-        <TodoInput 
-          currentPage={currentPage} 
-          totalPages={totalPages} 
-          onPageChange={handlePageChange} 
-          tasksPerPage={tasksPerPage} 
-          setTasksPerPage={handleTasksPerPageChange} 
+        <TodoInput
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+          tasksPerPage={tasksPerPage}
+          setTasksPerPage={handleTasksPerPageChange}
         />
       </div>
 
-      <div className="todo-list-container">
+      <div className='todo-list-container'>
         <TodoList todos={currentTodos} />
       </div>
 
-      <div className="pagination-footer">
-        <Typography variant="body" weight="regular" className="total-tasks">
+      <div className='pagination-footer'>
+        <Typography variant='body' weight='regular' className='total-tasks'>
           {t('totalTasks', { total: todos.length })}
         </Typography>
-        <PaginationControls 
+        <PaginationControls
           currentPage={currentPage}
           totalPages={totalPages}
           onPageChange={handlePageChange}

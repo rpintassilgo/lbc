@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, ThunkDispatch } from "@reduxjs/toolkit";
-import todoReducer from "./todo.redux";
+import { configureStore, ThunkAction, ThunkDispatch } from '@reduxjs/toolkit';
+import todoReducer from './todo.redux';
 
 const store = configureStore({
   reducer: {

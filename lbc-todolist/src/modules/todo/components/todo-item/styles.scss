@@ -1,24 +1,24 @@
-@import "../../../../utils/theme/palette";
+@import '../../../../utils/theme/palette';
 
 .todo-task-col {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
-.todo-task-col input[type="checkbox"] {
-    accent-color: map-get($palette, "primary", "main");
+.todo-task-col input[type='checkbox'] {
+  accent-color: map-get($palette, 'primary', 'main');
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .badge-completed {
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .todo-item-text {
-    color: map-get($palette, "gray", "700");
+  color: map-get($palette, 'gray', '700');
 }

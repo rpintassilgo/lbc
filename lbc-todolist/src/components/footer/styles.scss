@@ -1,26 +1,26 @@
-@import "../../utils/theme/palette";
+@import '../../utils/theme/palette';
 
 .footer {
-    background-color: map-get($palette, "default", "light");
-    border-top: 1px solid map-get($palette, "gray", "400");
-    padding: 24px 0;
+  background-color: map-get($palette, 'default', 'light');
+  border-top: 1px solid map-get($palette, 'gray', '400');
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+
+  .footer-content {
+    width: 1110px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: start;
+  }
 
-    .footer-content {
-        width: 1110px;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-    }
+  .logo {
+    height: 32px;
+    width: 169px;
+  }
 
-    .logo {
-        height: 32px;
-        width: 169px;
-    }
-
-    .footer-text {
-        margin: 0px 0px 0px 32px;
-        color: map-get($palette, "gray", "700");
-    }
+  .footer-text {
+    margin: 0px 0px 0px 32px;
+    color: map-get($palette, 'gray', '700');
+  }
 }

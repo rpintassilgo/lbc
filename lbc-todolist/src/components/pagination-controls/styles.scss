@@ -1,32 +1,31 @@
-@import "../../utils/theme/palette";
+@import '../../utils/theme/palette';
 
 .pagination-page-info {
-    margin: 0px !important;
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  margin: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .pagination-controls {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .pagination-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 4px;
-    margin-left: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-left: 16px;
 }
 
 .pagination-page-number {
-    height: 38px;
-    width: 38px;
-    background-color: map-get($palette, "primary", "main");
-    color: map-get($palette, "default", "white");
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 38px;
+  width: 38px;
+  background-color: map-get($palette, 'primary', 'main');
+  color: map-get($palette, 'default', 'white');
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-  

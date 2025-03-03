@@ -6,9 +6,7 @@ const router = createHashRouter([
   {
     path: '/',
     element: <MainLayout />,
-    children: [
-        { path: "/", element: <Todo /> }
-    ]
+    children: [{ path: '/', element: <Todo /> }],
   },
 ]);
 

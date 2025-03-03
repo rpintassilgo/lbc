@@ -1,4 +1,4 @@
-@import "../../utils/theme/palette";
+@import '../../utils/theme/palette';
 
 .toast-alert {
   position: fixed;
@@ -9,15 +9,15 @@
   align-items: center;
   justify-content: space-between;
   width: 443px;
-  background-color: map-get($palette, "green", "500");
+  background-color: map-get($palette, 'green', '500');
   border-radius: 8px;
   padding: 12px;
-  color: map-get($palette, "default", "white");
+  color: map-get($palette, 'default', 'white');
   font-size: 16px;
   font-weight: 600;
   line-height: 19px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  
+
   .toast-message {
     flex-grow: 1;
     margin-right: 8px;

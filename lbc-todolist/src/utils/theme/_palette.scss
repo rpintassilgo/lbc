@@ -1,159 +1,162 @@
-@import "bootstrap/scss/functions"; // Load Bootstrap Functions First
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/functions'; // Load Bootstrap Functions First
+@import 'bootstrap/scss/bootstrap';
 
 $palette: (
-  "primary": (
-    "main": #067B95,
-    "dark": #004555,
-    "light": #EBE5FC
+  'primary': (
+    'main': #067b95,
+    'dark': #004555,
+    'light': #ebe5fc,
   ),
-  "secondary": (
-    "main": #6C757D,
-    "dark": #54595E,
-    "light": #ABB5BE
+  'secondary': (
+    'main': #6c757d,
+    'dark': #54595e,
+    'light': #abb5be,
   ),
-  "status": (
-    "success": #28A745,
-    "danger": #DC3545,
-    "warning": #FFC107,
-    "info": #17A2B8
+  'status': (
+    'success': #28a745,
+    'danger': #dc3545,
+    'warning': #ffc107,
+    'info': #17a2b8,
   ),
-  "gray": (
-    "100": #F8F9FA,
-    "200": #E0E0E0,
-    "300": #DEE2E6,
-    "400": #CED4DA,
-    "500": #ADB5BD,
-    "600": #6C757D,
-    "700": #495057,
-    "800": #343A40,
-    "900": #212529
+  'gray': (
+    '100': #f8f9fa,
+    '200': #e0e0e0,
+    '300': #dee2e6,
+    '400': #ced4da,
+    '500': #adb5bd,
+    '600': #6c757d,
+    '700': #495057,
+    '800': #343a40,
+    '900': #212529,
   ),
-  "default": (
-    "white": #FFFFFF,
-    "black": #000000
+  'default': (
+    'white': #ffffff,
+    'black': #000000,
   ),
-  "blue": (
-    "100": #E0F2FF,
-    "200": #9ECEF6,
-    "300": #6EA6F6,
-    "400": #3B87F6,
-    "500": #006EF6,
-    "600": #005AC2,
-    "700": #0046A0,
-    "800": #003580,
-    "900": #002466
+  'blue': (
+    '100': #e0f2ff,
+    '200': #9ecef6,
+    '300': #6ea6f6,
+    '400': #3b87f6,
+    '500': #006ef6,
+    '600': #005ac2,
+    '700': #0046a0,
+    '800': #003580,
+    '900': #002466,
   ),
-  "indigo": (
-    "100": #E0DCFF,
-    "200": #C0AFFF,
-    "300": #A073FF,
-    "400": #8046FF,
-    "500": #6622FF,
-    "600": #5200DD,
-    "700": #4000BB,
-    "800": #300099,
-    "900": #200077
+  'indigo': (
+    '100': #e0dcff,
+    '200': #c0afff,
+    '300': #a073ff,
+    '400': #8046ff,
+    '500': #6622ff,
+    '600': #5200dd,
+    '700': #4000bb,
+    '800': #300099,
+    '900': #200077,
   ),
-  "purple": (
-    "100": #E2D3FF,
-    "200": #C2A6FF,
-    "300": #A277FF,
-    "400": #824CFF,
-    "500": #6622FF,
-    "600": #5200DD,
-    "700": #4000BB,
-    "800": #300099,
-    "900": #200077
+  'purple': (
+    '100': #e2d3ff,
+    '200': #c2a6ff,
+    '300': #a277ff,
+    '400': #824cff,
+    '500': #6622ff,
+    '600': #5200dd,
+    '700': #4000bb,
+    '800': #300099,
+    '900': #200077,
   ),
-  "pink": (
-    "100": #F7D6E6,
-    "200": #F3A8D3,
-    "300": #F179B3,
-    "400": #E84D93,
-    "500": #E02273,
-    "600": #C2005A,
-    "700": #A00047,
-    "800": #800036,
-    "900": #600024
+  'pink': (
+    '100': #f7d6e6,
+    '200': #f3a8d3,
+    '300': #f179b3,
+    '400': #e84d93,
+    '500': #e02273,
+    '600': #c2005a,
+    '700': #a00047,
+    '800': #800036,
+    '900': #600024,
   ),
-  "red": (
-    "100": #F8D7DA,
-    "200": #FFA8A8,
-    "300": #FF7A7A,
-    "400": #FF4D4D,
-    "500": #FF2222,
-    "600": #DD0000,
-    "700": #842029,
-    "800": #990000,
-    "900": #770000
+  'red': (
+    '100': #f8d7da,
+    '200': #ffa8a8,
+    '300': #ff7a7a,
+    '400': #ff4d4d,
+    '500': #ff2222,
+    '600': #dd0000,
+    '700': #842029,
+    '800': #990000,
+    '900': #770000,
   ),
-  "orange": (
-    "100": #FFEDCD,
-    "200": #FBDDA5,
-    "300": #F6CD82,
-    "400": #F2BD5E,
-    "500": #EFB03B,
-    "600": #D99A1A,
-    "700": #C18500,
-    "800": #A87000,
-    "900": #8F5B00
+  'orange': (
+    '100': #ffedcd,
+    '200': #fbdda5,
+    '300': #f6cd82,
+    '400': #f2bd5e,
+    '500': #efb03b,
+    '600': #d99a1a,
+    '700': #c18500,
+    '800': #a87000,
+    '900': #8f5b00,
   ),
-  "yellow": (
-    "100": #FFF3CD,
-    "200": #FFE69A,
-    "300": #FFDB66,
-    "400": #FFD033,
-    "500": #FFC500,
-    "600": #E5AC00,
-    "700": #CC9400,
-    "800": #B27C00,
-    "900": #996600
+  'yellow': (
+    '100': #fff3cd,
+    '200': #ffe69a,
+    '300': #ffdb66,
+    '400': #ffd033,
+    '500': #ffc500,
+    '600': #e5ac00,
+    '700': #cc9400,
+    '800': #b27c00,
+    '900': #996600,
   ),
-  "green": (
-    "100": #D1F2D1,
-    "200": #A7E6A7,
-    "300": #7BDA7B,
-    "400": #50CE50,
-    "500": #198754,
-    "600": #1F8F3A,
-    "700": #18772F,
-    "800": #126026,
-    "900": #0D4A1D
+  'green': (
+    '100': #d1f2d1,
+    '200': #a7e6a7,
+    '300': #7bda7b,
+    '400': #50ce50,
+    '500': #198754,
+    '600': #1f8f3a,
+    '700': #18772f,
+    '800': #126026,
+    '900': #0d4a1d,
   ),
-  "teal": (
-    "100": #D4F2EC,
-    "200": #A8E6DA,
-    "300": #7CDAC8,
-    "400": #50CEC2,
-    "500": #20C4B0,
-    "600": #18A79C,
-    "700": #128B88,
-    "800": #0D6F74,
-    "900": #09525F
+  'teal': (
+    '100': #d4f2ec,
+    '200': #a8e6da,
+    '300': #7cdac8,
+    '400': #50cec2,
+    '500': #20c4b0,
+    '600': #18a79c,
+    '700': #128b88,
+    '800': #0d6f74,
+    '900': #09525f,
   ),
-  "cyan": (
-    "100": #CFF4FC,
-    "200": #9EEAF8,
-    "300": #6EDFF5,
-    "400": #3ED4F2,
-    "500": #0EC9EF,
-    "600": #0BA8D0,
-    "700": #0987B0,
-    "800": #066690,
-    "900": #044570
-  )
+  'cyan': (
+    '100': #cff4fc,
+    '200': #9eeaf8,
+    '300': #6edff5,
+    '400': #3ed4f2,
+    '500': #0ec9ef,
+    '600': #0ba8d0,
+    '700': #0987b0,
+    '800': #066690,
+    '900': #044570,
+  ),
 );
 
 // ✅ Override Bootstrap Variables to Use This Theme
-$palette-colors: map-merge($palette, (
-  "primary": map-get($palette, "primary", "main"),
-  "secondary": map-get($palette, "secondary", "main"),
-  "success": map-get($palette, "status", "success"),
-  "danger": map-get($palette, "status", "danger"),
-  "warning": map-get($palette, "status", "warning"),
-  "info": map-get($palette, "status", "info")
-));
+$palette-colors: map-merge(
+  $palette,
+  (
+    'primary': map-get($palette, 'primary', 'main'),
+    'secondary': map-get($palette, 'secondary', 'main'),
+    'success': map-get($palette, 'status', 'success'),
+    'danger': map-get($palette, 'status', 'danger'),
+    'warning': map-get($palette, 'status', 'warning'),
+    'info': map-get($palette, 'status', 'info'),
+  )
+);
 
 // Import Bootstrap Variables After Defining Custom Colors
-@import "bootstrap/scss/variables";
+@import 'bootstrap/scss/variables';

@@ -1,21 +1,20 @@
-@import "../../utils/theme/palette";
+@import '../../utils/theme/palette';
 
 .header {
-    background-color: map-get($palette, "default", "light");;
-    padding: 48px 0px 0px 0px;
-    display: flex;
-    justify-content: center;
-    
-    .header-content {
-        width: 1110px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+  background-color: map-get($palette, 'default', 'light');
+  padding: 48px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
 
-    .logo {
-      height: 65px;
-      width: 347px;
-    }
+  .header-content {
+    width: 1110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: 65px;
+    width: 347px;
+  }
 }
-  

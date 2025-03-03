@@ -1,49 +1,49 @@
-@import "../../utils/theme/palette";
+@import '../../utils/theme/palette';
 
 .todo-container {
-    display: flex;
-    flex-direction: column;
-    margin: 48px 0px;
-    align-self: center;
-    max-height: calc(100vh - 48px - 48px);
-    width: 1110px;
-    max-width: 100%;
-    background-color: map-get($palette, "gray", "100");
-    border-radius: 8px;
-    box-shadow: 0px -5px 0px #67C0C2;
-    padding: 32px;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 48px 0px;
+  align-self: center;
+  max-height: calc(100vh - 48px - 48px);
+  width: 1110px;
+  max-width: 100%;
+  background-color: map-get($palette, 'gray', '100');
+  border-radius: 8px;
+  box-shadow: 0px -5px 0px #67c0c2;
+  padding: 32px;
+  overflow: hidden;
 }
 
 .todo-list-container {
-    flex-grow: 1;
-    overflow-y: auto;
-    min-height: 0;
-    justify-content: center;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 0;
+  justify-content: center;
 }
 
 .pagination-container {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 12px;
-    background-color: map-get($palette, "gray", "100");
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  background-color: map-get($palette, 'gray', '100');
 }
 
 .pagination-footer {
-    height: 38px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 16px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 16px;
 }
 
 .total-tasks {
-    font-size: 20px;
-    color: map-get($palette, "gray", "700");
-    margin: 0px !important;
-    display: flex;
-    justify-content: center;
-    align-self: center;
+  font-size: 20px;
+  color: map-get($palette, 'gray', '700');
+  margin: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }

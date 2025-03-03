@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "firebase/firestore";
-import { Todo } from "../reducers/todo.redux";
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { Todo } from '../reducers/todo.redux';
 
 // ---------- firebase config ------------
 
@@ -17,13 +17,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const todosCollection = collection(db, "todos");
+const todosCollection = collection(db, 'todos');
 
 // ---------- firebase functions ------------
 
 export const getTodos = async () => {
   const snapshot = await getDocs(todosCollection);
-  return snapshot.docs.map(doc => ({
+  return snapshot.docs.map((doc) => ({
     id: doc.id,
     ...doc.data(),
     createdAt: new Date(doc.data().createdAt),
@@ -42,12 +42,12 @@ export const createTodo = async (text: string) => {
 };
 
 export const toggleTodo = async (id: string, completedAt: Date | null) => {
-  const todoRef = doc(db, "todos", id);
+  const todoRef = doc(db, 'todos', id);
   await updateDoc(todoRef, { completedAt: completedAt ? completedAt.toISOString() : null });
 };
 
 export const deleteTodo = async (id: string) => {
-  const todoRef = doc(db, "todos", id);
+  const todoRef = doc(db, 'todos', id);
   await deleteDoc(todoRef);
 };
 

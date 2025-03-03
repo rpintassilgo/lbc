@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Dispatch } from "redux";
-import { ReducerThunk } from ".";
-import { getTodos, createTodo, toggleTodo, deleteTodo } from "../utils/firebase";
-import showToast from "../components/custom-toast";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Dispatch } from 'redux';
+import { ReducerThunk } from '.';
+import { getTodos, createTodo, toggleTodo, deleteTodo } from '../utils/firebase';
+import showToast from '../components/custom-toast';
 
 export interface Todo {
   id: string;
@@ -24,7 +24,7 @@ const initialState: TodoState = {
 };
 
 const todoSlice = createSlice({
-  name: "todo",
+  name: 'todo',
   initialState,
   reducers: {
     setTodos(state, action: PayloadAction<Todo[]>) {
@@ -62,40 +62,46 @@ export const fetchAllTodos = (): ReducerThunk => async (dispatch: Dispatch) => {
     const todos = await getTodos();
     dispatch(setTodos(todos));
   } catch (error) {
-    console.error(error)
-    showToast("errorWhileFetchingTodoList")
+    console.error(error);
+    showToast('errorWhileFetchingTodoList');
   }
 };
 
-export const createNewTodo = (text: string): ReducerThunk => async (dispatch: Dispatch) => {
-  try {
-    const newTodo = await createTodo(text);
-    dispatch(addTodo(newTodo));
-    showToast("taskAdded")
-  } catch (error) {
-    console.error(error)
-    showToast("errorWhileAddingTask")
-  }
-};
+export const createNewTodo =
+  (text: string): ReducerThunk =>
+  async (dispatch: Dispatch) => {
+    try {
+      const newTodo = await createTodo(text);
+      dispatch(addTodo(newTodo));
+      showToast('taskAdded');
+    } catch (error) {
+      console.error(error);
+      showToast('errorWhileAddingTask');
+    }
+  };
 
-export const toggleTodoCompletion = (id: string, completedAt: Date | null): ReducerThunk => async (dispatch: Dispatch) => {
-  try {
-    await toggleTodo(id, completedAt);
-    dispatch(toggleTodoStatus({ id, completedAt }));
-    if (completedAt) showToast("taskCompleted")
-  } catch (error) {
-    console.error(error)
-    showToast("errorWhileCompletingTask")
-  }
-};
+export const toggleTodoCompletion =
+  (id: string, completedAt: Date | null): ReducerThunk =>
+  async (dispatch: Dispatch) => {
+    try {
+      await toggleTodo(id, completedAt);
+      dispatch(toggleTodoStatus({ id, completedAt }));
+      if (completedAt) showToast('taskCompleted');
+    } catch (error) {
+      console.error(error);
+      showToast('errorWhileCompletingTask');
+    }
+  };
 
-export const deleteTodoById = (id: string): ReducerThunk => async (dispatch: Dispatch) => {
-  try {
-    await deleteTodo(id);
-    dispatch(removeTodo(id));
-    showToast('taskDeleted')
-  } catch (error) {
-    console.error(error)
-    showToast("errorWhileDeletingTask")
-  }
-};
+export const deleteTodoById =
+  (id: string): ReducerThunk =>
+  async (dispatch: Dispatch) => {
+    try {
+      await deleteTodo(id);
+      dispatch(removeTodo(id));
+      showToast('taskDeleted');
+    } catch (error) {
+      console.error(error);
+      showToast('errorWhileDeletingTask');
+    }
+  };

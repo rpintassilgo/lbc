@@ -1,10 +1,9 @@
-import { createElement, useState, useEffect } from "react";
-import { createRoot } from "react-dom/client";
-import Typography from "../typography";
-import { X } from "react-bootstrap-icons";
-import "./styles.scss"
-import { useTranslation } from "react-i18next";
-
+import { createElement, useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import Typography from '../typography';
+import { X } from 'react-bootstrap-icons';
+import './styles.scss';
+import { useTranslation } from 'react-i18next';
 
 // Note: This toast could be implemented differently, however due to time constraints and giving that this is just
 // a skill accessment test I did it this way. Ideally, we could use bootstrap's alert component and override its
@@ -12,12 +11,12 @@ import { useTranslation } from "react-i18next";
 // to allow better control over multiple toasts instead of creating new DOM element each time.
 
 const showToast = (message: string) => {
-  const alertContainer = document.createElement("div");
+  const alertContainer = document.createElement('div');
   document.body.appendChild(alertContainer);
   const root = createRoot(alertContainer);
 
   const ToastComponent = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const [show, setShow] = useState(true);
 
     useEffect(() => {
@@ -35,11 +34,11 @@ const showToast = (message: string) => {
     if (!show) return null;
 
     return (
-      <div className="toast-alert">
-        <Typography variant="h6" weight="semibold" className="toast-message" noMargin>
+      <div className='toast-alert'>
+        <Typography variant='h6' weight='semibold' className='toast-message' noMargin>
           {t(message)}
         </Typography>
-        <X className="toast-close-icon" onClick={() => setShow(false)} />
+        <X className='toast-close-icon' onClick={() => setShow(false)} />
       </div>
     );
   };
