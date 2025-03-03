@@ -23,7 +23,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({
     const {t} = useTranslation()
   return (
     <div className="pagination-controls">
-      <Typography variant="body">
+      <Typography variant="body" className="pagination-page-info">
         {t('pageInfo', { currentPage, totalPages})}
       </Typography>
 
@@ -34,7 +34,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({
           disabled={currentPage === 1} 
         />
         
-        <Typography variant="body" className="pagination-page-number">
+        <Typography variant="body" className="pagination-page-number" noMargin>
           {currentPage}
         </Typography>
         

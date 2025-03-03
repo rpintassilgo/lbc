@@ -9,24 +9,36 @@
 
 .todo-table {
     width: 100%;
-    border-collapse: collapse;
-}
+    border-collapse: collapse; // Ensures there is no space between borders
+    border-spacing: 0; // Ensures no default spacing
 
-.todo-table thead {
-    position: sticky;
-    top: 0;
-    background-color: map-get($palette, "gray", "100"); // Ensure header stays visible
-    z-index: 2;
-}
+    thead {
+        border-top: 1px solid map-get($palette, "gray", "300");
+        border-bottom: 2px solid map-get($palette, "gray", "300");
 
-.todo-table tbody {
-    display: block;
-    overflow-y: auto;
-    max-height: 300px; // Adjust as needed based on the available space
-}
+        th {
+            padding: 16px 0; // Adds spacing inside cells
+            text-align: left;
+        }
+    }
 
-.todo-table tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+    tbody tr {
+        border-bottom: 1px solid map-get($palette, "gray", "300");
+    }
+
+    tbody td {
+        padding: 6px 8px; // 6px top/bottom, 8px left/right for better readability
+    }
+
+    .todo-actions {
+        text-align: right;
+        padding-right: 8px;
+    }
+
+    .todo-delete-button {
+        padding: 4px 8px;
+        display: flex;
+        align-items: center; // Centers the button within the cell
+        justify-content: center;
+    }
 }

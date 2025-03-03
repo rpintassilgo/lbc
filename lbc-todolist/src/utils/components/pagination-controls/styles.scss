@@ -1,3 +1,12 @@
+@import "../../../utils/theme/palette";
+
+.pagination-page-info {
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
 .pagination-controls {
     display: flex;
     flex-direction: row;
@@ -8,5 +17,16 @@
     flex-direction: row;
     gap: 4px;
     margin-left: 16px;
+}
+
+.pagination-page-number {
+    height: 38px;
+    width: 38px;
+    background-color: map-get($palette, "primary", "main");
+    color: map-get($palette, "default", "white");
+    border-radius: 6px;
+    display: flex; // Enables flexbox
+    align-items: center; // Centers content vertically
+    justify-content: center; // Centers content horizontally
 }
   
