@@ -8,34 +8,48 @@
   overflow: hidden;
 }
 
+.todo-table-wrapper {
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  position: relative;
+}
+
 .todo-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
-
+  
   thead {
-    border-top: 1px solid map-get($palette, 'gray', '300');
-    border-bottom: 2px solid map-get($palette, 'gray', '300');
-
-    th {
-      padding: 16px 0;
-      text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: map-get($palette, "gray", "100");
+    
+    tr {
+      th {
+        padding: 16px 0;
+        text-align: left;
+        border-top: 1px solid map-get($palette, 'gray', '300');
+        border-bottom: 2px solid map-get($palette, 'gray', '300');
+      }
     }
   }
-
-  tbody tr {
-    border-bottom: 1px solid map-get($palette, 'gray', '300');
+  
+  tbody {
+    tr {
+      td {
+        padding: 6px 8px;
+        border-bottom: 1px solid map-get($palette, 'gray', '300');
+      }
+    }
   }
-
-  tbody td {
-    padding: 6px 8px;
-  }
-
+  
   .todo-actions {
     text-align: right;
     padding-right: 8px;
   }
-
+  
   .todo-delete-button {
     padding: 4px 8px;
     display: flex;
@@ -46,7 +60,7 @@
 
 .todo-empty {
   padding: 48px;
-  color: 1px solid map-get($palette, 'gray', '700');
+  color: map-get($palette, 'gray', '700');
 }
 
 .todo-empty-container {
